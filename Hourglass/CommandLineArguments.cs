@@ -1038,7 +1038,7 @@ namespace Hourglass
         private static TimerStart GetTimerStartValue(IEnumerable<string> remainingArgs)
         {
             string value = string.Join(" ", remainingArgs);
-            TimerStart timerStart = TimerStart.FromString(value);
+            TimerStart timerStart = TimerStart.FromString(value, IsTimeSpan: true);
 
             if (timerStart == null)
             {

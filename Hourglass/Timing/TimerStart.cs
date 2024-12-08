@@ -71,7 +71,7 @@ namespace Hourglass.Timing
         /// </summary>
         public static TimerStart Default
         {
-            get { return TimerStart.FromString(Resources.TimerStartDefault); }
+            get { return TimerStart.FromString(Resources.TimerStartDefault, IsTimeSpan: true); }
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Hourglass.Timing
         /// </summary>
         public static TimerStart Zero
         {
-            get { return TimerStart.FromString(Resources.TimerStartZero); }
+            get { return TimerStart.FromString(Resources.TimerStartZero, IsTimeSpan: true); }
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Hourglass.Timing
         /// <param name="str">A string.</param>
         /// <returns>The <see cref="TimerStart"/> for the string, or <c>null</c> if the string is not a supported
         /// representation of a <see cref="TimerStart"/>.</returns>
-        public static TimerStart FromString(string str)
+        public static TimerStart FromString(string str, bool IsTimeSpan)
         {
             TimerStartToken timerStartToken = TimerStartToken.FromString(str);
 

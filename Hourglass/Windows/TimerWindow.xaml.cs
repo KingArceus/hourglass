@@ -179,6 +179,8 @@ namespace Hourglass.Windows
         /// </summary>
         private WindowState restoreWindowState = WindowState.Normal;
 
+        private bool TimeSpanState = true;
+
         #endregion
 
         #region Constructors
@@ -1529,7 +1531,7 @@ namespace Hourglass.Windows
         /// <param name="e">The event data.</param>
         private void StartCommandExecuted(object sender, ExecutedRoutedEventArgs e)
         {
-            TimerStart timerStart = TimerStart.FromString(this.TimerTextBox.Text);
+            TimerStart timerStart = TimerStart.FromString(this.TimerTextBox.Text, (bool)TypeSpanRadioButton.IsChecked);
             if (timerStart == null)
             {
                 this.BeginValidationErrorAnimation();

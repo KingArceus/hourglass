@@ -211,6 +211,14 @@
         <Border x:Name="OuterNotificationBorder" IsHitTestVisible="False" Opacity="0"/>
         <Grid x:Name="InnerGrid" Margin="10">
             <StackPanel x:Name="ControlsPanel" Margin="20 0" VerticalAlignment="Center" Orientation="Vertical">
+                <Grid x:Name="TypeGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <RadioButton x:Name="TypeSpanRadioButton" Grid.Column="0" HorizontalAlignment="Center" Margin="0 5" IsChecked="True">Time Span</RadioButton>
+                    <RadioButton x:Name="TypeUntilRadioButton" Grid.Column="1" HorizontalAlignment="Center" Margin="0 5">Time Until</RadioButton>
+                </Grid>
                 <local:SizeToFitTextBox x:Name="TitleTextBox"
                                         Background="{x:Null}"
                                         BorderBrush="{x:Null}"
