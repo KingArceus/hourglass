@@ -46,6 +46,11 @@
                     <MultiDataTrigger.Conditions>
                         <Condition Binding="{Binding ElementName=TitleTextBox, Path=IsFocused}" Value="False"/>
                         <Condition Binding="{Binding ElementName=TimerTextBox, Path=IsFocused}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=TimerTextBoxWeek, Path=IsFocused}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=TimerTextBoxDay, Path=IsFocused}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=TimerTextBoxHour, Path=IsFocused}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=TimerTextBoxMinute, Path=IsFocused}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=TimerTextBoxSecond, Path=IsFocused}" Value="False"/>
                         <Condition Binding="{Binding ElementName=StartButton, Path=IsFocused}" Value="False"/>
                         <Condition Binding="{Binding ElementName=PauseButton, Path=IsFocused}" Value="False"/>
                         <Condition Binding="{Binding ElementName=ResumeButton, Path=IsFocused}" Value="False"/>
@@ -90,6 +95,11 @@
                     <MultiDataTrigger.Conditions>
                         <Condition Binding="{Binding ElementName=TitleTextBox, Path=IsFocused}" Value="False"/>
                         <Condition Binding="{Binding ElementName=TimerTextBox, Path=IsFocused}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=TimerTextBoxWeek, Path=IsFocused}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=TimerTextBoxDay, Path=IsFocused}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=TimerTextBoxHour, Path=IsFocused}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=TimerTextBoxMinute, Path=IsFocused}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=TimerTextBoxSecond, Path=IsFocused}" Value="False"/>
                         <Condition Binding="{Binding ElementName=StartButton, Path=IsFocused}" Value="False"/>
                         <Condition Binding="{Binding ElementName=PauseButton, Path=IsFocused}" Value="False"/>
                         <Condition Binding="{Binding ElementName=ResumeButton, Path=IsFocused}" Value="False"/>
@@ -165,6 +175,11 @@
                     <MultiDataTrigger.Conditions>
                         <Condition Binding="{Binding ElementName=TitleTextBox, Path=IsFocused}" Value="False"/>
                         <Condition Binding="{Binding ElementName=TimerTextBox, Path=IsFocused}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=TimerTextBoxWeek, Path=IsFocused}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=TimerTextBoxDay, Path=IsFocused}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=TimerTextBoxHour, Path=IsFocused}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=TimerTextBoxMinute, Path=IsFocused}" Value="False"/>
+                        <Condition Binding="{Binding ElementName=TimerTextBoxSecond, Path=IsFocused}" Value="False"/>
                         <Condition Binding="{Binding ElementName=StartButton, Path=IsFocused}" Value="False"/>
                         <Condition Binding="{Binding ElementName=PauseButton, Path=IsFocused}" Value="False"/>
                         <Condition Binding="{Binding ElementName=ResumeButton, Path=IsFocused}" Value="False"/>
@@ -241,55 +256,55 @@
                                         PreviewMouseDown="TimerTextBoxPreviewMouseDown"
                                         PreviewGotKeyboardFocus="TimerTextBoxPreviewGotKeyboardFocus"
                                         TextAlignment="Center"/>
-                <local:SizeToFitTextBox x:Name="TimerTextBox_Week"
+                <local:SizeToFitTextBox x:Name="TimerTextBoxWeek"
                                         Background="{x:Null}"
                                         BorderBrush="{x:Null}"
                                         FontFamily="Segoe UI Light, Segoe UI"
                                         Margin="0 1 0 4"
                                         MaxFontSize="18"
                                         MinFontSize="8"
-                                        PreviewMouseDown="TimerTextBoxPreviewMouseDown"
-                                        PreviewGotKeyboardFocus="TimerTextBoxPreviewGotKeyboardFocus"
+                                        PreviewMouseDown="TimerTextBoxWeekPreviewMouseDown"
+                                        PreviewGotKeyboardFocus="TimerTextBoxWeekPreviewGotKeyboardFocus"
                                         TextAlignment="Center"/>
-                <local:SizeToFitTextBox x:Name="TimerTextBox_Day"
+                <local:SizeToFitTextBox x:Name="TimerTextBoxDay"
                                         Background="{x:Null}"
                                         BorderBrush="{x:Null}"
                                         FontFamily="Segoe UI Light, Segoe UI"
                                         Margin="0 1 0 4"
                                         MaxFontSize="18"
                                         MinFontSize="8"
-                                        PreviewMouseDown="TimerTextBoxPreviewMouseDown"
-                                        PreviewGotKeyboardFocus="TimerTextBoxPreviewGotKeyboardFocus"
+                                        PreviewMouseDown="TimerTextBoxDayPreviewMouseDown"
+                                        PreviewGotKeyboardFocus="TimerTextBoxDayPreviewGotKeyboardFocus"
                                         TextAlignment="Center"/>
-                <local:SizeToFitTextBox x:Name="TimerTextBox_Hour"
+                <local:SizeToFitTextBox x:Name="TimerTextBoxHour"
                                         Background="{x:Null}"
                                         BorderBrush="{x:Null}"
                                         FontFamily="Segoe UI Light, Segoe UI"
                                         Margin="0 1 0 4"
                                         MaxFontSize="18"
                                         MinFontSize="8"
-                                        PreviewMouseDown="TimerTextBoxPreviewMouseDown"
-                                        PreviewGotKeyboardFocus="TimerTextBoxPreviewGotKeyboardFocus"
+                                        PreviewMouseDown="TimerTextBoxHourPreviewMouseDown"
+                                        PreviewGotKeyboardFocus="TimerTextBoxHourPreviewGotKeyboardFocus"
                                         TextAlignment="Center"/>
-                <local:SizeToFitTextBox x:Name="TimerTextBox_Minute"
+                <local:SizeToFitTextBox x:Name="TimerTextBoxMinute"
                                         Background="{x:Null}"
                                         BorderBrush="{x:Null}"
                                         FontFamily="Segoe UI Light, Segoe UI"
                                         Margin="0 1 0 4"
                                         MaxFontSize="18"
                                         MinFontSize="8"
-                                        PreviewMouseDown="TimerTextBoxPreviewMouseDown"
-                                        PreviewGotKeyboardFocus="TimerTextBoxPreviewGotKeyboardFocus"
+                                        PreviewMouseDown="TimerTextBoxMinutePreviewMouseDown"
+                                        PreviewGotKeyboardFocus="TimerTextBoxMinutePreviewGotKeyboardFocus"
                                         TextAlignment="Center"/>
-                <local:SizeToFitTextBox x:Name="TimerTextBox_Second"
+                <local:SizeToFitTextBox x:Name="TimerTextBoxSecond"
                                         Background="{x:Null}"
                                         BorderBrush="{x:Null}"
                                         FontFamily="Segoe UI Light, Segoe UI"
                                         Margin="0 1 0 4"
                                         MaxFontSize="18"
                                         MinFontSize="8"
-                                        PreviewMouseDown="TimerTextBoxPreviewMouseDown"
-                                        PreviewGotKeyboardFocus="TimerTextBoxPreviewGotKeyboardFocus"
+                                        PreviewMouseDown="TimerTextBoxSecondPreviewMouseDown"
+                                        PreviewGotKeyboardFocus="TimerTextBoxSecondPreviewGotKeyboardFocus"
                                         TextAlignment="Center"/>
                 <Grid>
                     <Label x:Name="TimeExpiredLabel"

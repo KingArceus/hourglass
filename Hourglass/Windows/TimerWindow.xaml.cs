@@ -1877,6 +1877,236 @@ namespace Hourglass.Windows
         }
 
         /// <summary>
+        /// Invoked when any mouse button is pressed while the pointer is over the <see cref="TimerTextBoxWeek"/>.
+        /// </summary>
+        /// <param name="sender">The <see cref="TimerTextBoxWeek"/>.</param>
+        /// <param name="e">The event data.</param>
+        private void TimerTextBoxWeekPreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (this.Options.LockInterface && this.Mode != TimerWindowMode.Input)
+            {
+                e.Handled = true;
+            }
+            else if (this.Mode != TimerWindowMode.Input)
+            {
+                this.SwitchToInputMode();
+                e.Handled = true;
+            }
+            else if (!this.TimerTextBoxWeek.IsFocused)
+            {
+                this.TimerTextBoxWeek.SelectAll();
+                this.TimerTextBoxWeek.Focus();
+                e.Handled = true;
+            }
+        }
+
+        /// <summary>
+        /// Invoked when the <see cref="TimerTextBoxWeek"/> is in the process of acquiring keyboard focus.
+        /// </summary>
+        /// <param name="sender">The <see cref="TimerTextBoxWeek"/>.</param>
+        /// <param name="e">The event data.</param>
+        private void TimerTextBoxWeekPreviewGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (this.Options.LockInterface && this.Mode != TimerWindowMode.Input)
+            {
+                e.Handled = true;
+            }
+            else if (this.Mode != TimerWindowMode.Input)
+            {
+                this.SwitchToInputMode();
+                e.Handled = true;
+            }
+            else
+            {
+                this.TimerTextBoxWeek.SelectAll();
+            }
+        }
+
+        /// <summary>
+        /// Invoked when any mouse button is pressed while the pointer is over the <see cref="TimerTextBoxDay"/>.
+        /// </summary>
+        /// <param name="sender">The <see cref="TimerTextBoxDay"/>.</param>
+        /// <param name="e">The event data.</param>
+        private void TimerTextBoxDayPreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (this.Options.LockInterface && this.Mode != TimerWindowMode.Input)
+            {
+                e.Handled = true;
+            }
+            else if (this.Mode != TimerWindowMode.Input)
+            {
+                this.SwitchToInputMode();
+                e.Handled = true;
+            }
+            else if (!this.TimerTextBoxDay.IsFocused)
+            {
+                this.TimerTextBoxDay.SelectAll();
+                this.TimerTextBoxDay.Focus();
+                e.Handled = true;
+            }
+        }
+
+        /// <summary>
+        /// Invoked when the <see cref="TimerTextBoxDay"/> is in the process of acquiring keyboard focus.
+        /// </summary>
+        /// <param name="sender">The <see cref="TimerTextBoxDay"/>.</param>
+        /// <param name="e">The event data.</param>
+        private void TimerTextBoxDayPreviewGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (this.Options.LockInterface && this.Mode != TimerWindowMode.Input)
+            {
+                e.Handled = true;
+            }
+            else if (this.Mode != TimerWindowMode.Input)
+            {
+                this.SwitchToInputMode();
+                e.Handled = true;
+            }
+            else
+            {
+                this.TimerTextBoxDay.SelectAll();
+            }
+        }
+
+        /// <summary>
+        /// Invoked when any mouse button is pressed while the pointer is over the <see cref="TimerTextBoxHour"/>.
+        /// </summary>
+        /// <param name="sender">The <see cref="TimerTextBoxHour"/>.</param>
+        /// <param name="e">The event data.</param>
+        private void TimerTextBoxHourPreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (this.Options.LockInterface && this.Mode != TimerWindowMode.Input)
+            {
+                e.Handled = true;
+            }
+            else if (this.Mode != TimerWindowMode.Input)
+            {
+                this.SwitchToInputMode();
+                e.Handled = true;
+            }
+            else if (!this.TimerTextBoxHour.IsFocused)
+            {
+                this.TimerTextBoxHour.SelectAll();
+                this.TimerTextBoxHour.Focus();
+                e.Handled = true;
+            }
+        }
+
+        /// <summary>
+        /// Invoked when the <see cref="TimerTextBoxHour"/> is in the process of acquiring keyboard focus.
+        /// </summary>
+        /// <param name="sender">The <see cref="TimerTextBoxHour"/>.</param>
+        /// <param name="e">The event data.</param>
+        private void TimerTextBoxHourPreviewGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (this.Options.LockInterface && this.Mode != TimerWindowMode.Input)
+            {
+                e.Handled = true;
+            }
+            else if (this.Mode != TimerWindowMode.Input)
+            {
+                this.SwitchToInputMode();
+                e.Handled = true;
+            }
+            else
+            {
+                this.TimerTextBoxHour.SelectAll();
+            }
+        }
+
+        /// <summary>
+        /// Invoked when any mouse button is pressed while the pointer is over the <see cref="TimerTextBoxMinute"/>.
+        /// </summary>
+        /// <param name="sender">The <see cref="TimerTextBoxMinute"/>.</param>
+        /// <param name="e">The event data.</param>
+        private void TimerTextBoxMinutePreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (this.Options.LockInterface && this.Mode != TimerWindowMode.Input)
+            {
+                e.Handled = true;
+            }
+            else if (this.Mode != TimerWindowMode.Input)
+            {
+                this.SwitchToInputMode();
+                e.Handled = true;
+            }
+            else if (!this.TimerTextBoxMinute.IsFocused)
+            {
+                this.TimerTextBoxMinute.SelectAll();
+                this.TimerTextBoxMinute.Focus();
+                e.Handled = true;
+            }
+        }
+
+        /// <summary>
+        /// Invoked when the <see cref="TimerTextBoxMinute"/> is in the process of acquiring keyboard focus.
+        /// </summary>
+        /// <param name="sender">The <see cref="TimerTextBoxMinute"/>.</param>
+        /// <param name="e">The event data.</param>
+        private void TimerTextBoxMinutePreviewGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (this.Options.LockInterface && this.Mode != TimerWindowMode.Input)
+            {
+                e.Handled = true;
+            }
+            else if (this.Mode != TimerWindowMode.Input)
+            {
+                this.SwitchToInputMode();
+                e.Handled = true;
+            }
+            else
+            {
+                this.TimerTextBoxMinute.SelectAll();
+            }
+        }
+
+        /// <summary>
+        /// Invoked when any mouse button is pressed while the pointer is over the <see cref="TimerTextBoxSecond"/>.
+        /// </summary>
+        /// <param name="sender">The <see cref="TimerTextBoxSecond"/>.</param>
+        /// <param name="e">The event data.</param>
+        private void TimerTextBoxSecondPreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (this.Options.LockInterface && this.Mode != TimerWindowMode.Input)
+            {
+                e.Handled = true;
+            }
+            else if (this.Mode != TimerWindowMode.Input)
+            {
+                this.SwitchToInputMode();
+                e.Handled = true;
+            }
+            else if (!this.TimerTextBoxSecond.IsFocused)
+            {
+                this.TimerTextBoxSecond.SelectAll();
+                this.TimerTextBoxSecond.Focus();
+                e.Handled = true;
+            }
+        }
+
+        /// <summary>
+        /// Invoked when the <see cref="TimerTextBoxSecond"/> is in the process of acquiring keyboard focus.
+        /// </summary>
+        /// <param name="sender">The <see cref="TimerTextBoxSecond"/>.</param>
+        /// <param name="e">The event data.</param>
+        private void TimerTextBoxSecondPreviewGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (this.Options.LockInterface && this.Mode != TimerWindowMode.Input)
+            {
+                e.Handled = true;
+            }
+            else if (this.Mode != TimerWindowMode.Input)
+            {
+                this.SwitchToInputMode();
+                e.Handled = true;
+            }
+            else
+            {
+                this.TimerTextBoxSecond.SelectAll();
+            }
+        }
+
+        /// <summary>
         /// Invoked when the <see cref="TimerWindow"/> is laid out, rendered, and ready for interaction.
         /// </summary>
         /// <param name="sender">The <see cref="TimerWindow"/>.</param>
