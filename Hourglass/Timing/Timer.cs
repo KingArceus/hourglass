@@ -220,6 +220,13 @@ namespace Hourglass.Timing
             get { return true; }
         }
 
+        /// <summary>
+        /// Gets the Time Span representation of the time since the timer expired.
+        /// </summary>
+        public TimeSpan TimeLeftasSpan
+        {
+            get { return this.TimeLeftasSpan; }
+        }
         #endregion
 
         #region Static Methods
@@ -500,7 +507,16 @@ namespace Hourglass.Timing
                 return Resources.TimerTimerExpired;
             }
 
-            return this.TimeLeft.RoundUp().ToNaturalString();
+            var weeks = this.TimeLeft?.Duration().Days > 7 ? string.Format("{0:0} week{1}, ", this.TimeLeft?.Days / 7, this.TimeLeft?.Days / 7 == 1 ? string.Empty : "s") : string.Empty;
+            var days = this.TimeLeft?.Duration().Days % 7 > 0 ? string.Format("{0:0} day{1}, ", this.TimeLeft?.Days % 7, this.TimeLeft?.Days % 7 == 1 ? string.Empty : "s") : string.Empty;
+
+            string formatted = string.Format("{0}{1}{2}{3}{4}", weeks, days,
+            this.TimeLeft?.Duration().Hours > 0 ? string.Format("{0:0} hour{1}, ", this.TimeLeft?.Hours, this.TimeLeft?.Hours == 1 ? string.Empty : "s") : string.Empty,
+            this.TimeLeft?.Duration().Minutes > 0 ? string.Format("{0:0} minute{1}, ", this.TimeLeft?.Minutes, this.TimeLeft?.Minutes == 1 ? string.Empty : "s") : string.Empty,
+            this.TimeLeft?.Duration().Seconds > 0 ? string.Format("{0:0} second{1}", this.TimeLeft?.Seconds, this.TimeLeft?.Seconds == 1 ? string.Empty : "s") : string.Empty);
+            if (formatted.EndsWith(", ")) formatted = formatted.Substring(0, formatted.Length - 2);
+            if (string.IsNullOrEmpty(formatted)) formatted = "0 seconds";
+            return formatted;
         }
 
         /// <summary>

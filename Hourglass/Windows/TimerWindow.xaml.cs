@@ -1087,9 +1087,19 @@ namespace Hourglass.Windows
                         this.TitleTextBox.Text = this.Timer.Options.Title;
                         this.TitleTextBox.TextChanged += this.TitleTextBoxTextChanged;
 
-                        this.TimerTextBox.Text = this.Timer.Options.ShowTimeElapsed
-                            ? this.Timer.TimeElapsedAsString
-                            : this.Timer.TimeLeftAsString;
+                        if (this.Timer.Options.ShowTimeElapsed)
+                        {
+                            this.TimerTextBox.Text = this.Timer.TimeElapsedAsString;
+                        }
+                        else
+                        {
+                            this.TimerTextBox.Text = this.Timer.TimeLeftAsString;
+                            this.TimerTextBoxWeek.Text = this.Timer.TimeLeftAsString;
+                            this.TimerTextBoxDay.Text = this.Timer.TimeLeftAsString;
+                            this.TimerTextBoxHour.Text = this.Timer.TimeLeftAsString;
+                            this.TimerTextBoxMinute.Text = this.Timer.TimeLeftAsString;
+                            this.TimerTextBoxSecond.Text = this.Timer.TimeLeftAsString;
+                        }
                     }
 
                     this.ProgressBar.Value = this.GetProgressBarValue();
