@@ -1094,11 +1094,11 @@ namespace Hourglass.Windows
                         else
                         {
                             this.TimerTextBox.Text = this.Timer.TimeLeftAsString;
-                            this.TimerTextBoxWeek.Text = this.Timer.TimeLeftAsString;
-                            this.TimerTextBoxDay.Text = this.Timer.TimeLeftAsString;
-                            this.TimerTextBoxHour.Text = this.Timer.TimeLeftAsString;
-                            this.TimerTextBoxMinute.Text = this.Timer.TimeLeftAsString;
-                            this.TimerTextBoxSecond.Text = this.Timer.TimeLeftAsString;
+                            this.TimerTextBoxWeek.Text = this.Timer.TimeLeftAsWeekString;
+                            this.TimerTextBoxDay.Text = this.Timer.TimeLeftAsDayString;
+                            this.TimerTextBoxHour.Text = this.Timer.TimeLeftAsHourString;
+                            this.TimerTextBoxMinute.Text = this.Timer.TimeLeftAsMinuteString;
+                            this.TimerTextBoxSecond.Text = this.Timer.TimeLeftAsSecondString;
                         }
                     }
 

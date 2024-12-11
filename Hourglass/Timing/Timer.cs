@@ -66,6 +66,31 @@ namespace Hourglass.Timing
         /// </summary>
         private string timeExpiredAsString;
 
+        /// <summary>
+        /// The string representation of the time left until the timer expires.
+        /// </summary>
+        private string timeLeftAsWeekString;
+
+        /// <summary>
+        /// The string representation of the time left until the timer expires.
+        /// </summary>
+        private string timeLeftAsDayString;
+
+        /// <summary>
+        /// The string representation of the time left until the timer expires.
+        /// </summary>
+        private string timeLeftAsHourString;
+
+        /// <summary>
+        /// The string representation of the time left until the timer expires.
+        /// </summary>
+        private string timeLeftAsMinuteString;
+
+        /// <summary>
+        /// The string representation of the time left until the timer expires.
+        /// </summary>
+        private string timeLeftAsSecondString;
+
         #endregion
 
         #region Constructors
@@ -221,11 +246,43 @@ namespace Hourglass.Timing
         }
 
         /// <summary>
-        /// Gets the Time Span representation of the time since the timer expired.
+        /// Gets the Time Span representation of the time by weeks unit since the timer expired.
         /// </summary>
-        public TimeSpan TimeLeftasSpan
+        public string TimeLeftAsWeekString
         {
-            get { return this.TimeLeftasSpan; }
+            get { return this.timeLeftAsWeekString; }
+        }
+
+        /// <summary>
+        /// Gets the Time Span representation of the time by days unit since the timer expired.
+        /// </summary>
+        public string TimeLeftAsDayString
+        {
+            get { return this.timeLeftAsDayString; }
+        }
+
+        /// <summary>
+        /// Gets the Time Span representation of the time by hours unit since the timer expired.
+        /// </summary>
+        public string TimeLeftAsHourString
+        {
+            get { return this.timeLeftAsHourString; }
+        }
+
+        /// <summary>
+        /// Gets the Time Span representation of the time by minutes unit since the timer expired.
+        /// </summary>
+        public string TimeLeftAsMinuteString
+        {
+            get { return this.timeLeftAsMinuteString; }
+        }
+
+        /// <summary>
+        /// Gets the Time Span representation of the time by seconds unit since the timer expired.
+        /// </summary>
+        public string TimeLeftAsSecondString
+        {
+            get { return this.timeLeftAsSecondString; }
         }
         #endregion
 
@@ -431,6 +488,11 @@ namespace Hourglass.Timing
             this.timeLeftAsPercentage = this.GetTimeLeftAsPercentage();
             this.timeElapsedAsPercentage = this.GetTimeElapsedAsPercentage();
             this.timeLeftAsString = this.GetTimeLeftAsString();
+            this.timeLeftAsWeekString = this.GetTimeLeftAsString();
+            this.timeLeftAsDayString = this.GetTimeLeftAsString();
+            this.timeLeftAsHourString = this.GetTimeLeftAsString();
+            this.timeLeftAsMinuteString = this.GetTimeLeftAsString();
+            this.timeLeftAsSecondString = this.GetTimeLeftAsString();
             this.timeElapsedAsString = this.GetTimeElapsedAsString();
             this.timeExpiredAsString = this.GetTimeExpiredAsString();
 
