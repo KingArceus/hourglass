@@ -488,11 +488,11 @@ namespace Hourglass.Timing
             this.timeLeftAsPercentage = this.GetTimeLeftAsPercentage();
             this.timeElapsedAsPercentage = this.GetTimeElapsedAsPercentage();
             this.timeLeftAsString = this.GetTimeLeftAsString();
-            this.timeLeftAsWeekString = this.GetTimeLeftAsString();
-            this.timeLeftAsDayString = this.GetTimeLeftAsString();
-            this.timeLeftAsHourString = this.GetTimeLeftAsString();
-            this.timeLeftAsMinuteString = this.GetTimeLeftAsString();
-            this.timeLeftAsSecondString = this.GetTimeLeftAsString();
+            this.timeLeftAsWeekString = this.GetTimeLeftAsWeekString();
+            this.timeLeftAsDayString = this.GetTimeLeftAsDayString();
+            this.timeLeftAsHourString = this.GetTimeLeftAsHourString();
+            this.timeLeftAsMinuteString = this.GetTimeLeftAsMinuteString();
+            this.timeLeftAsSecondString = this.GetTimeLeftAsSecondString();
             this.timeElapsedAsString = this.GetTimeElapsedAsString();
             this.timeExpiredAsString = this.GetTimeExpiredAsString();
 
@@ -578,6 +578,119 @@ namespace Hourglass.Timing
             this.TimeLeft?.Duration().Seconds > 0 ? string.Format("{0:0} second{1}", this.TimeLeft?.Seconds, this.TimeLeft?.Seconds == 1 ? string.Empty : "s") : string.Empty);
             if (formatted.EndsWith(", ")) formatted = formatted.Substring(0, formatted.Length - 2);
             if (string.IsNullOrEmpty(formatted)) formatted = "0 seconds";
+            return formatted;
+        }
+
+        /// <summary>
+        /// Returns the string representation of the time left with week as unit until the timer expires.
+        /// </summary>
+        /// <returns>The string representation of the time left with week as unit until the timer expires.</returns>
+        private string GetTimeLeftAsWeekString()
+        {
+            if (this.State == TimerState.Stopped)
+            {
+                return Resources.TimerTimerStopped;
+            }
+
+            if (this.State == TimerState.Expired)
+            {
+                return Resources.TimerTimerExpired;
+            }
+
+            string formatted = this.TimeLeft?.Duration().Days > 7 ? string.Format("{0:0} week{1}, ", this.TimeLeft?.Days / 7, this.TimeLeft?.Days / 7 == 1 ? string.Empty : "s") : string.Empty;
+            
+            if (string.IsNullOrEmpty(formatted)) formatted = "0 week";
+            return formatted;
+        }
+
+        /// <summary>
+        /// Returns the string representation of the time left with day as unit until the timer expires.
+        /// </summary>
+        /// <returns>The string representation of the time left with day as unit until the timer expires.</returns>
+        private string GetTimeLeftAsDayString()
+        {
+            if (this.State == TimerState.Stopped)
+            {
+                return Resources.TimerTimerStopped;
+            }
+
+            if (this.State == TimerState.Expired)
+            {
+                return Resources.TimerTimerExpired;
+            }
+
+            string formatted = this.TimeLeft?.Duration().Days > 0 ? string.Format("{0:0} day{1}, ", this.TimeLeft?.Days, this.TimeLeft?.Days == 1 ? string.Empty : "s") : string.Empty;
+
+            if (string.IsNullOrEmpty(formatted)) formatted = "0 day";
+            return formatted;
+        }
+
+        /// <summary>
+        /// Returns the string representation of the time left with hour as unit until the timer expires.
+        /// </summary>
+        /// <returns>The string representation of the time left with hour as unit until the timer expires.</returns>
+        private string GetTimeLeftAsHourString()
+        {
+            if (this.State == TimerState.Stopped)
+            {
+                return Resources.TimerTimerStopped;
+            }
+
+            if (this.State == TimerState.Expired)
+            {
+                return Resources.TimerTimerExpired;
+            }
+
+            var hours = this.TimeLeft?.TotalHours > 0 ? this.TimeLeft?.Days * 24 + this.TimeLeft?.Hours : 0;
+            string formatted = hours > 0 ? string.Format("{0:0} hour{1}, ", hours, hours == 1 ? string.Empty : "s") : string.Empty;
+
+            if (string.IsNullOrEmpty(formatted)) formatted = "0 hour";
+            return formatted;
+        }
+
+        /// <summary>
+        /// Returns the string representation of the time left with minute as unit until the timer expires.
+        /// </summary>
+        /// <returns>The string representation of the time left with minute as unit until the timer expires.</returns>
+        private string GetTimeLeftAsMinuteString()
+        {
+            if (this.State == TimerState.Stopped)
+            {
+                return Resources.TimerTimerStopped;
+            }
+
+            if (this.State == TimerState.Expired)
+            {
+                return Resources.TimerTimerExpired;
+            }
+
+            var minutes = this.TimeLeft?.TotalMinutes > 0 ? (this.TimeLeft?.Days * 24 + this.TimeLeft?.Hours) * 60 + this.TimeLeft?.Minutes : 0;
+            string formatted = minutes > 0 ? string.Format("{0:0} minute{1}, ", minutes, minutes == 1 ? string.Empty : "s") : string.Empty;
+
+            if (string.IsNullOrEmpty(formatted)) formatted = "0 minute";
+            return formatted;
+        }
+
+        /// <summary>
+        /// Returns the string representation of the time left with second as unit until the timer expires.
+        /// </summary>
+        /// <returns>The string representation of the time left with second as unit until the timer expires.</returns>
+        private string GetTimeLeftAsSecondString()
+        {
+            if (this.State == TimerState.Stopped)
+            {
+                return Resources.TimerTimerStopped;
+            }
+
+            if (this.State == TimerState.Expired)
+            {
+                return Resources.TimerTimerExpired;
+            }
+
+            var seconds = this.TimeLeft?.TotalSeconds > 0 ? ((this.TimeLeft?.Days * 24 + this.TimeLeft?.Hours) * 60 + this.TimeLeft?.Minutes) * 60 + this.TimeLeft?.Seconds : 0;
+            string formatted = seconds > 1 ? string.Format("{0:0} second{1}, ", seconds, seconds == 1 ? string.Empty : "s") : string.Empty;
+
+            if (string.IsNullOrEmpty(formatted)) formatted = "0 second";
             return formatted;
         }
 
