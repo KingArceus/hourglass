@@ -34,9 +34,9 @@ namespace Hourglass.Parsing
         /// <param name="str">A string.</param>
         /// <returns>A <see cref="TimerStartToken"/> for the specified string, or <c>null</c> if the string is not a
         /// supported representation of a <see cref="TimerStartToken"/>.</returns>
-        public static TimerStartToken FromString(string str)
+        public static TimerStartToken FromString(string str, bool IsTimeSpan)
         {
-            return FromString(str, CultureInfo.CurrentCulture);
+            return FromString(str, IsTimeSpan, CultureInfo.CurrentCulture);
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace Hourglass.Parsing
         /// <param name="provider">An <see cref="IFormatProvider"/>.</param>
         /// <returns>A <see cref="TimerStartToken"/> for the specified string, or <c>null</c> if the string is not a
         /// supported representation of a <see cref="TimerStartToken"/>.</returns>
-        public static TimerStartToken FromString(string str, IFormatProvider provider)
+        public static TimerStartToken FromString(string str, bool IsTimeSpan, IFormatProvider provider)
         {
             str = str.Trim();
 

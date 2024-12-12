@@ -119,7 +119,7 @@ namespace Hourglass.Timing
         /// representation of a <see cref="TimerStart"/>.</returns>
         public static TimerStart FromString(string str, bool IsTimeSpan)
         {
-            TimerStartToken timerStartToken = TimerStartToken.FromString(str);
+            TimerStartToken timerStartToken = TimerStartToken.FromString(str, IsTimeSpan);
 
             if (timerStartToken == null)
             {
